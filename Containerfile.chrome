@@ -1,0 +1,26 @@
+FROM debian:bullseye-slim as build-env
+
+ARG DEBIAN_FRONTEND=noninteractive
+
+RUN apt update && apt upgrade -y \
+  # install ruby
+  && apt install -y --no-install-recommends --no-install-suggests ruby ruby-dev \
+  # install gem dependencies
+  && apt install -y --no-install-recommends --no-install-suggests build-essential libffi-dev \
+  # install chromium chromium-driver
+  && apt install -y --no-install-recommends --no-install-suggests chromium chromium-driver \
+  # make image smaller
+  #&& apt purge -y --auto-remove wget \
+  && rm -rf "/var/lib/apt/lists/*" \
+  && rm -rf /var/cache/apt/archives
+
+RUN gem install bundler \
+  && bundle init \
+  && bundle add cucumber capybara selenium-webdriver \
+  && bundle exec cucumber --init
+
+COPY features/support/chrome.rb features/support/chrome.rb
+COPY features/step_definitions/example_steps.rb features/step_definitions/example_steps.rb
+COPY features/example.feature features/example.feature
+
+CMD bundle exec cucumber
