@@ -1,4 +1,4 @@
-FROM ruby:3.1.4-slim-bookworm as build-env
+FROM ruby:3.3.5-slim-bookworm as build-env
 
 ARG DEBIAN_FRONTEND=noninteractive
 
