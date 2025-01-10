@@ -7,8 +7,8 @@ RUN apt update && apt upgrade -y \
   && apt install -y --no-install-recommends --no-install-suggests build-essential libffi-dev \
   # install firefox geckodriver
   && apt install -y --no-install-recommends --no-install-suggests firefox-esr wget \
-  && wget https://github.com/mozilla/geckodriver/releases/download/v0.33.0/geckodriver-v0.33.0-linux64.tar.gz -O geckodriver.tar.gz \
-  && echo '5f5e89bb31fe5f55f963f56ef7e55a5c8e9dc415d94b1ddc539171a327b8e6c4	geckodriver.tar.gz' > geckodriver.tar.gz.sha256 \
+  && wget https://github.com/mozilla/geckodriver/releases/download/v0.35.0/geckodriver-v0.35.0-linux64.tar.gz -O geckodriver.tar.gz \
+  && echo 'ac26e9ba8f3b8ce0fbf7339b9c9020192f6dcfcbf04a2bcd2af80dfe6bb24260	geckodriver.tar.gz' > geckodriver.tar.gz.sha256 \
   && sha256sum -c geckodriver.tar.gz.sha256 \
   && tar xfz geckodriver.tar.gz \
   && rm geckodriver.tar.gz* \
