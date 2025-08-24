@@ -9,10 +9,10 @@ A simple, non-Rails example of web automation using Ruby, Cucumber, Selenium, an
 
 ## 🛠️ Tech Stack
 
-*   💎 **Ruby**: The core programming language.
-*   🥒 **Cucumber**: For writing tests in a BDD (Behavior-Driven Development) style.
-*   🚗 **Selenium WebDriver**: For browser automation.
-*   👻 **Capybara**: An acceptance test framework for web applications.
+*   💎 [**Ruby**](https://www.ruby-lang.org/): The core programming language.
+*   🥒 [**Cucumber**](https://cucumber.io/): For writing tests in a BDD (Behavior-Driven Development) style.
+*   🚗 [**Selenium WebDriver**](https://www.selenium.dev/): For browser automation.
+*   👻 [**Capybara**](https://teamcapybara.github.io/capybara/): An acceptance test framework for web applications.
 
 ## 🚀 Getting Started
 
