@@ -1,4 +1,4 @@
-FROM docker.io/ruby:3.4.5-slim-bookworm as build-env
+FROM docker.io/ruby:4.0.1-slim-trixie as build-env
 
 ARG DEBIAN_FRONTEND=noninteractive
 
